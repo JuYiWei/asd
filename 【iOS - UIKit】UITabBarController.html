@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  Archives - 【iOS - UIKit】说了是村长
+  UITabBarController - 【iOS - UIKit】说了是村长
   
   </title>
  <meta name="description" content="">
@@ -140,266 +140,183 @@
             <div class="large-9 medium-9 columns">
 
  <div class="markdown-body">
-	
-		 
-		  	<h2>2018</h2>
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%913.html">待：</a></h3>
-				<p>
-					<time datetime="2018-03-20T16:09:08+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h1>UITabBarController</h1>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%912.html"></a></h3>
-				<p>
-					<time datetime="2018-03-20T16:09:08+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<ul>
+<li>
+<a href="#toc_0">属性</a>
+</li>
+<li>
+<a href="#toc_1">方法</a>
+</li>
+<li>
+<a href="#toc_2">代理 UITabBarControllerDelegate</a>
+</li>
+<li>
+<a href="#toc_3">拓展 UIViewController (UITabBarControllerItem)</a>
+</li>
+</ul>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%911.html"></a></h3>
-				<p>
-					<time datetime="2018-03-20T16:09:07+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIWindow.html">UIWindow</a></h3>
-				<p>
-					<time datetime="2018-03-20T16:09:07+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<blockquote>
+<p>UITabBarController : UIViewController<br/>
+本身是 View，被集成在 UITabBarController 中使用</p>
+</blockquote>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIApplication%EF%BC%88%E5%BE%85%E8%A1%A5%E5%85%85%EF%BC%89.html">UIApplication（待补充）</a></h3>
-				<p>
-					<time datetime="2018-03-20T14:43:34+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h3 id="toc_0">属性</h3>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIInterface%EF%BC%88%E5%BE%85%E8%A1%A5%E5%85%85%EF%BC%89.html">UIInterface（待补充）</a></h3>
-				<p>
-					<time datetime="2018-03-20T14:43:34+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<ul>
+<li>基础属性</li>
+</ul>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarMetrics%20%E4%B8%8E%20UIBarPosition.html">UIBarMetrics 与 UIBarPosition</a></h3>
-				<p>
-					<time datetime="2018-03-20T14:43:34+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<pre><code>    NSArray *arr = self.tabBarController.viewControllers;// 所有 vc 
+    UITabBar *tabBar = self.tabBarController.tabBar;// tabBar，可展开研究深入内容    
+</code></pre>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIToolbar.html">UIToolbar</a></h3>
-				<p>
-					<time datetime="2018-03-20T11:06:27+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<ul>
+<li>选中相关</li>
+</ul>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarButtonItem.html">UIBarButtonItem</a></h3>
-				<p>
-					<time datetime="2018-03-20T11:06:26+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<pre><code>    UIViewController *select = self.tabBarController.selectedViewController;// 当前选择 vc
+    NSInteger index = self.tabBarController.selectedIndex;// 当前选择 index 
+</code></pre>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationItem.html">UINavigationItem</a></h3>
-				<p>
-					<time datetime="2018-03-20T11:06:25+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<ul>
+<li>更多相关</li>
+</ul>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationBar.html">UINavigationBar</a></h3>
-				<p>
-					<time datetime="2018-03-20T08:54:18+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<pre><code>    UINavigationController *nav = self.tabBarController.moreNavigationController;//更多导航
+    NSArray *arr2 = self.tabBarController.customizableViewControllers;// 可排序的 vc
+</code></pre>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationController.html">UINavigationController</a></h3>
-				<p>
-					<time datetime="2018-03-19T16:54:27+08:00" pubdate><span class='month'>3月</span> <span class='day'>19</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h3 id="toc_1">方法</h3>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarItem.html">UIBarItem</a></h3>
-				<p>
-					<time datetime="2018-03-19T16:35:05+08:00" pubdate><span class='month'>3月</span> <span class='day'>19</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<pre><code>    // 直接修改 vc
+    [self.tabBarController setViewControllers:@[testVC1, testVC2]];
+</code></pre>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBarItem.html">UITabBarItem</a></h3>
-				<p>
-					<time datetime="2018-03-19T16:18:11+08:00" pubdate><span class='month'>3月</span> <span class='day'>19</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h3 id="toc_2">代理 UITabBarControllerDelegate</h3>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBar.html">UITabBar</a></h3>
-				<p>
-					<time datetime="2018-03-19T15:17:16+08:00" pubdate><span class='month'>3月</span> <span class='day'>19</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<ul>
+<li>点击项</li>
+</ul>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBarController.html">UITabBarController</a></h3>
-				<p>
-					<time datetime="2018-03-19T09:04:14+08:00" pubdate><span class='month'>3月</span> <span class='day'>19</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<pre><code>
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    NSLog(@&quot;shouldSelectViewController&quot;);
+    return YES;
+}
 
-				</p>
-			</div>
- 	 
-</div>  
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    NSLog(@&quot;didSelectViewController&quot;);
+}
+</code></pre>
+
+<ul>
+<li>更多项</li>
+</ul>
+
+<pre><code>
+- (void)tabBarController:(UITabBarController *)tabBarController willBeginCustomizingViewControllers:(NSArray&lt;__kindof UIViewController *&gt; *)viewControllers {
+    NSLog(@&quot;willBeginCustomizingViewControllers&quot;);
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController willEndCustomizingViewControllers:(NSArray&lt;__kindof UIViewController *&gt; *)viewControllers changed:(BOOL)changed {
+    NSLog(@&quot;willEndCustomizingViewControllers&quot;);
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController didEndCustomizingViewControllers:(NSArray&lt;__kindof UIViewController *&gt; *)viewControllers changed:(BOOL)changed {
+    NSLog(@&quot;didEndCustomizingViewControllers&quot;);
+}
+</code></pre>
+
+<ul>
+<li>屏幕旋转</li>
+</ul>
+
+<blockquote>
+<p>暂不清楚使用方式；</p>
+</blockquote>
+
+<pre><code>// 支持的方向
+- (UIInterfaceOrientationMask)tabBarControllerSupportedInterfaceOrientations:(UITabBarController *)tabBarController {
+    return UIInterfaceOrientationMaskLandscapeLeft;
+}
+
+// 优先的方向
+- (UIInterfaceOrientation)tabBarControllerPreferredInterfaceOrientationForPresentation:(UITabBarController *)tabBarController {
+    return UIInterfaceOrientationLandscapeRight;
+}
+</code></pre>
+
+<ul>
+<li>自定义转场，酷炫</li>
+</ul>
+
+<blockquote>
+<p><code>UIViewControllerTransitioning.h</code> 中深入了解</p>
+</blockquote>
+
+<pre><code>// 添加交互转场，例如左侧边侧滑返回，可以根据手势实现是否转场的中间状态
+- (nullable id &lt;UIViewControllerInteractiveTransitioning&gt;)tabBarController:(UITabBarController *)tabBarController
+                                interactionControllerForAnimationController: (id &lt;UIViewControllerAnimatedTransitioning&gt;)animationController {
+    return [[TestInteractiveTransition alloc] init];
+}
+
+// 普通动画转场
+- (nullable id &lt;UIViewControllerAnimatedTransitioning&gt;)tabBarController:(UITabBarController *)tabBarController
+                     animationControllerForTransitionFromViewController:(UIViewController *)fromVC
+                                                       toViewController:(UIViewController *)toVC {
+    return [[TestTransition alloc] init];
+}
+</code></pre>
+
+<h3 id="toc_3">拓展 UIViewController (UITabBarControllerItem)</h3>
+
+<ul>
+<li>属性</li>
+</ul>
+
+<pre><code>self.tabBarItem;
+self.tabBarController;
+</code></pre>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBar.html"  title="Previous Post: UITabBar">&laquo; UITabBar</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBarController.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  Archives - 【iOS - UIKit】说了是村长
+  UIBarButtonItem - 【iOS - UIKit】说了是村长
   
   </title>
  <meta name="description" content="">
@@ -140,266 +140,126 @@
             <div class="large-9 medium-9 columns">
 
  <div class="markdown-body">
-	
-		 
-		  	<h2>2018</h2>
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%913.html">待：</a></h3>
-				<p>
-					<time datetime="2018-03-20T16:09:08+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h1>UIBarButtonItem</h1>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%912.html"></a></h3>
-				<p>
-					<time datetime="2018-03-20T16:09:08+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<blockquote>
+<p>UIBarButtonItem : UIBarItem</p>
+</blockquote>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%911.html"></a></h3>
-				<p>
-					<time datetime="2018-03-20T16:09:07+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h3 id="toc_0">初始化</h3>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIWindow.html">UIWindow</a></h3>
-				<p>
-					<time datetime="2018-03-20T16:09:07+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<pre><code>
+    
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@&quot;123&quot;
+                                                             style:UIBarButtonItemStylePlain
+                                                            target:self
+                                                            action:@selector(l1)];
+    
+    UIBarButtonItem *item2 = [[UIBarButtonItem alloc] initWithImage:image1
+                                                              style:UIBarButtonItemStylePlain
+                                                             target:self
+                                                             action:@selector(l2)];
+    
+    UIBarButtonItem *item3 = [[UIBarButtonItem alloc] initWithImage:image1
+                                                landscapeImagePhone:image2
+                                                              style:UIBarButtonItemStylePlain
+                                                             target:self
+                                                             action:@selector(l3)];
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIApplication%EF%BC%88%E5%BE%85%E8%A1%A5%E5%85%85%EF%BC%89.html">UIApplication（待补充）</a></h3>
-				<p>
-					<time datetime="2018-03-20T14:43:34+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+    UIBarButtonItem *item4 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemPlay
+                                                                           target:self
+                                                                           action:@selector(l4)];
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIInterface%EF%BC%88%E5%BE%85%E8%A1%A5%E5%85%85%EF%BC%89.html">UIInterface（待补充）</a></h3>
-				<p>
-					<time datetime="2018-03-20T14:43:34+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+    UIBarButtonItem *item5 = [[UIBarButtonItem alloc] initWithCustomView:testView];
+</code></pre>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarMetrics%20%E4%B8%8E%20UIBarPosition.html">UIBarMetrics 与 UIBarPosition</a></h3>
-				<p>
-					<time datetime="2018-03-20T14:43:34+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h3 id="toc_1">item 背景</h3>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIToolbar.html">UIToolbar</a></h3>
-				<p>
-					<time datetime="2018-03-20T11:06:27+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<pre><code>    // 背景 1
+    [item setBackgroundImage:[UIImage imageNamed:@&quot;icon&quot;] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    UIImage *image1 = [item backgroundImageForState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+     
+    // 背景 2
+    [item setBackgroundImage:[UIImage imageNamed:@&quot;icon&quot;] forState:UIControlStateNormal style:UIBarButtonItemStylePlain barMetrics:UIBarMetricsDefault];
+    UIImage *image2 = [item backgroundImageForState:UIControlStateNormal style:UIBarButtonItemStylePlain barMetrics:UIBarMetricsDefault];
+    
+    // 背景偏移
+    [item setBackgroundVerticalPositionAdjustment:10 forBarMetrics:UIBarMetricsDefault];
+    CGFloat v = [item backgroundVerticalPositionAdjustmentForBarMetrics:UIBarMetricsDefault];
+</code></pre>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarButtonItem.html">UIBarButtonItem</a></h3>
-				<p>
-					<time datetime="2018-03-20T11:06:26+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h3 id="toc_2">item 标题</h3>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationItem.html">UINavigationItem</a></h3>
-				<p>
-					<time datetime="2018-03-20T11:06:25+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<pre><code>    item.tintColor = [UIColor redColor];
+    [item setTitlePositionAdjustment: UIOffsetMake(10, 20) forBarMetrics:UIBarMetricsDefault];
+    UIOffset offset = [item titlePositionAdjustmentForBarMetrics:UIBarMetricsDefault];
+</code></pre>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationBar.html">UINavigationBar</a></h3>
-				<p>
-					<time datetime="2018-03-20T08:54:18+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h3 id="toc_3">backItem 设置（UINavigationBar 专用）</h3>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationController.html">UINavigationController</a></h3>
-				<p>
-					<time datetime="2018-03-19T16:54:27+08:00" pubdate><span class='month'>3月</span> <span class='day'>19</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<blockquote>
+<p>不知道如何使用啊，并没什么软用。</p>
+</blockquote>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarItem.html">UIBarItem</a></h3>
-				<p>
-					<time datetime="2018-03-19T16:35:05+08:00" pubdate><span class='month'>3月</span> <span class='day'>19</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<pre><code>    [self.navigationItem.backBarButtonItem setBackButtonBackgroundImage:[UIImage imageNamed:@&quot;icon&quot;] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    UIImage *image = [self.navigationItem.backBarButtonItem backButtonBackgroundImageForState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    [self.navigationItem.backBarButtonItem setBackButtonTitlePositionAdjustment:UIOffsetMake(10, 10) forBarMetrics:UIBarMetricsDefault];
+    UIOffset offset = [self.navigationItem.backBarButtonItem backButtonTitlePositionAdjustmentForBarMetrics:UIBarMetricsDefault];
+    
+    [self.navigationItem.backBarButtonItem setBackButtonBackgroundVerticalPositionAdjustment:-20 forBarMetrics:UIBarMetricsDefault];
+    CGFloat v = [self.navigationItem.backBarButtonItem backgroundVerticalPositionAdjustmentForBarMetrics:UIBarMetricsDefault];
+</code></pre>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBarItem.html">UITabBarItem</a></h3>
-				<p>
-					<time datetime="2018-03-19T16:18:11+08:00" pubdate><span class='month'>3月</span> <span class='day'>19</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h3 id="toc_4">其他属性</h3>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBar.html">UITabBar</a></h3>
-				<p>
-					<time datetime="2018-03-19T15:17:16+08:00" pubdate><span class='month'>3月</span> <span class='day'>19</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<pre><code>    item.style;
+    item.width;
+    item.possibleTitles;
+    item.customView;
+    item.action;
+    item.target;
+</code></pre>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBarController.html">UITabBarController</a></h3>
-				<p>
-					<time datetime="2018-03-19T09:04:14+08:00" pubdate><span class='month'>3月</span> <span class='day'>19</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
 
-				</p>
-			</div>
- 	 
-</div>  
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIToolbar.html"  title="Previous Post: UIToolbar">&laquo; UIToolbar</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationItem.html" 
+	        title="Next Post: UINavigationItem">UINavigationItem &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarButtonItem.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 

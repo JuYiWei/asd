@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  Archives - 【iOS - UIKit】说了是村长
+  UINavigationItem - 【iOS - UIKit】说了是村长
   
   </title>
  <meta name="description" content="">
@@ -140,266 +140,125 @@
             <div class="large-9 medium-9 columns">
 
  <div class="markdown-body">
-	
-		 
-		  	<h2>2018</h2>
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%913.html">待：</a></h3>
-				<p>
-					<time datetime="2018-03-20T16:09:08+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h1>UINavigationItem</h1>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%912.html"></a></h3>
-				<p>
-					<time datetime="2018-03-20T16:09:08+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<blockquote>
+<p>UINavigationItem : NSObject<br/>
+UINavigationBar 上的 标题与返回 item 的详细容器</p>
+</blockquote>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%911.html"></a></h3>
-				<p>
-					<time datetime="2018-03-20T16:09:07+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h3 id="toc_0">初始化</h3>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIWindow.html">UIWindow</a></h3>
-				<p>
-					<time datetime="2018-03-20T16:09:07+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<pre><code>    // 一般就直接用 Nav 上的，自定义才自己初始化
+    UINavigationItem *item = [[UINavigationItem alloc] initWithTitle:@&quot;标题&quot;];
+</code></pre>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIApplication%EF%BC%88%E5%BE%85%E8%A1%A5%E5%85%85%EF%BC%89.html">UIApplication（待补充）</a></h3>
-				<p>
-					<time datetime="2018-03-20T14:43:34+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h3 id="toc_1">标题 item</h3>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIInterface%EF%BC%88%E5%BE%85%E8%A1%A5%E5%85%85%EF%BC%89.html">UIInterface（待补充）</a></h3>
-				<p>
-					<time datetime="2018-03-20T14:43:34+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<pre><code>    // 主标题
+    self.navigationItem.title = @&quot;新标题&quot;;
+    
+    // 标题图片
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@&quot;icon_100&quot;]];
+    
+    // 小标题
+    self.navigationItem.prompt = @&quot;promt&quot;;
+</code></pre>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarMetrics%20%E4%B8%8E%20UIBarPosition.html">UIBarMetrics 与 UIBarPosition</a></h3>
-				<p>
-					<time datetime="2018-03-20T14:43:34+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h3 id="toc_2">返回 item</h3>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIToolbar.html">UIToolbar</a></h3>
-				<p>
-					<time datetime="2018-03-20T11:06:27+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<pre><code>    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@&quot;111&quot; style:UIBarButtonItemStylePlain target:self action:@selector(asd)];
+    self.navigationItem.hidesBackButton = NO;
+    [self.navigationItem setHidesBackButton:YES animated:YES];
+</code></pre>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarButtonItem.html">UIBarButtonItem</a></h3>
-				<p>
-					<time datetime="2018-03-20T11:06:26+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<blockquote>
+<p>直接用 UINavigationController 上的 navigationItem 时，每次 push、pop 其实都有被设置返回 item 为栈上倒数第二个 item 的title；</p>
+</blockquote>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationItem.html">UINavigationItem</a></h3>
-				<p>
-					<time datetime="2018-03-20T11:06:25+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h3 id="toc_3">额外 item，</h3>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationBar.html">UINavigationBar</a></h3>
-				<p>
-					<time datetime="2018-03-20T08:54:18+08:00" pubdate><span class='month'>3月</span> <span class='day'>20</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<ul>
+<li>左侧</li>
+</ul>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationController.html">UINavigationController</a></h3>
-				<p>
-					<time datetime="2018-03-19T16:54:27+08:00" pubdate><span class='month'>3月</span> <span class='day'>19</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<pre><code>    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@&quot;左边&quot; style:0 target:self action:@selector(leftItemHandle)];
+    UIBarButtonItem *leftItem2 = [[UIBarButtonItem alloc] initWithTitle:@&quot;左边2&quot; style:0 target:self action:@selector(leftItemHandle)];
+    [self.navigationItem setLeftBarButtonItems:@[leftItem, leftItem2]];
+    
+    UIBarButtonItem *item = self.navigationItem.leftBarButtonItem;
+    NSArray *items = self.navigationItem.leftBarButtonItems;
+    
+    
+    // 不重绘 backItem，默认会覆盖 backItem，且影响侧滑但会手势
+    self.navigationItem.leftItemsSupplementBackButton = YES;
+</code></pre>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarItem.html">UIBarItem</a></h3>
-				<p>
-					<time datetime="2018-03-19T16:35:05+08:00" pubdate><span class='month'>3月</span> <span class='day'>19</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<ul>
+<li>右侧（同上）</li>
+</ul>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBarItem.html">UITabBarItem</a></h3>
-				<p>
-					<time datetime="2018-03-19T16:18:11+08:00" pubdate><span class='month'>3月</span> <span class='day'>19</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h3 id="toc_4">iOS 11</h3>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBar.html">UITabBar</a></h3>
-				<p>
-					<time datetime="2018-03-19T15:17:16+08:00" pubdate><span class='month'>3月</span> <span class='day'>19</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<h4 id="toc_5">下拉搜索</h4>
 
-				</p>
-			</div>
- 	
-		
-		
-			<div>
-				<h3><a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBarController.html">UITabBarController</a></h3>
-				<p>
-					<time datetime="2018-03-19T09:04:14+08:00" pubdate><span class='month'>3月</span> <span class='day'>19</span> <span class='year'>2018</span></time>
-					&nbsp;&nbsp;
-				  <span class="categories">posted in 
-				  
-					    <a class='category' href='%E7%9B%AE%E5%BD%95.html'>目录</a>&nbsp;
-				   
-				  </span>
+<pre><code>    // 下拉出现搜索 VC
+    self.navigationItem.searchController = searchVC;
+    self.navigationItem.hidesSearchBarWhenScrolling = YES;
+</code></pre>
 
-				</p>
-			</div>
- 	 
-</div>  
+<blockquote>
+<p>UISearchController 待深入了解；</p>
+</blockquote>
+
+<h4 id="toc_6">大标题显示方式</h4>
+
+<pre><code>    self.navigationItem.largeTitleDisplayMode = UINavigationItemLargeTitleDisplayModeAutomatic;
+</code></pre>
+
+<blockquote>
+<p>结合 UINavigationBar 使用</p>
+</blockquote>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarButtonItem.html"  title="Previous Post: UIBarButtonItem">&laquo; UIBarButtonItem</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationBar.html" 
+	        title="Next Post: UINavigationBar">UINavigationBar &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationItem.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 
