@@ -1,0 +1,549 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  UIKit.h 剩余总览 - 【iOS - UIKit】居然是村长
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="【iOS - UIKit】居然是村长" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">【iOS - UIKit】居然是村长</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 【iOS - UIKit】居然是村长</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>B</label></li>
+
+          
+            <li><a title="UIBarMetrics 与 UIBarPosition" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarMetrics%20%E4%B8%8E%20UIBarPosition.html">UIBarMetrics 与 UIBarPosition</a></li>
+          
+            <li><a title="UIBarButtonItem" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarButtonItem.html">UIBarButtonItem</a></li>
+          
+            <li><a title="UIBarItem" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarItem.html">UIBarItem</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>N</label></li>
+
+          
+            <li><a title="UINavigationItem" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationItem.html">UINavigationItem</a></li>
+          
+            <li><a title="UINavigationBar" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationBar.html">UINavigationBar</a></li>
+          
+            <li><a title="UINavigationController" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationController.html">UINavigationController</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>T</label></li>
+
+          
+            <li><a title="UIToolbar" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIToolbar.html">UIToolbar</a></li>
+          
+            <li><a title="UITabBarItem" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBarItem.html">UITabBarItem</a></li>
+          
+            <li><a title="UITabBar" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBar.html">UITabBar</a></li>
+          
+            <li><a title="UITabBarController" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBarController.html">UITabBarController</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>W</label></li>
+
+          
+            <li><a title="UIWindow 窗口" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIWindow%20%E7%AA%97%E5%8F%A3.html">UIWindow 窗口</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>准备中</label></li>
+
+          
+            <li><a title="待：" href="%E3%80%90iOS%20-%20UIKit%E3%80%913.html">待：</a></li>
+          
+            <li><a title="UIInterface（待补充）" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIInterface%EF%BC%88%E5%BE%85%E8%A1%A5%E5%85%85%EF%BC%89.html">UIInterface（待补充）</a></li>
+          
+            <li><a title="UIApplication（待补充）" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIApplication%EF%BC%88%E5%BE%85%E8%A1%A5%E5%85%85%EF%BC%89.html">UIApplication（待补充）</a></li>
+          
+            <li><a title="UIKit.h 剩余总览" href="15217699956252.html">UIKit.h 剩余总览</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>B</span></li>
+                        
+                          <li><a title="UIBarMetrics 与 UIBarPosition" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarMetrics%20%E4%B8%8E%20UIBarPosition.html">UIBarMetrics 与 UIBarPosition</a></li>
+                        
+                          <li><a title="UIBarButtonItem" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarButtonItem.html">UIBarButtonItem</a></li>
+                        
+                          <li><a title="UIBarItem" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarItem.html">UIBarItem</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>N</span></li>
+                        
+                          <li><a title="UINavigationItem" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationItem.html">UINavigationItem</a></li>
+                        
+                          <li><a title="UINavigationBar" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationBar.html">UINavigationBar</a></li>
+                        
+                          <li><a title="UINavigationController" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UINavigationController.html">UINavigationController</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>T</span></li>
+                        
+                          <li><a title="UIToolbar" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIToolbar.html">UIToolbar</a></li>
+                        
+                          <li><a title="UITabBarItem" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBarItem.html">UITabBarItem</a></li>
+                        
+                          <li><a title="UITabBar" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBar.html">UITabBar</a></li>
+                        
+                          <li><a title="UITabBarController" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBarController.html">UITabBarController</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>W</span></li>
+                        
+                          <li><a title="UIWindow 窗口" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIWindow%20%E7%AA%97%E5%8F%A3.html">UIWindow 窗口</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>准备中</span></li>
+                        
+                          <li><a title="待：" href="%E3%80%90iOS%20-%20UIKit%E3%80%913.html">待：</a></li>
+                        
+                          <li><a title="UIInterface（待补充）" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIInterface%EF%BC%88%E5%BE%85%E8%A1%A5%E5%85%85%EF%BC%89.html">UIInterface（待补充）</a></li>
+                        
+                          <li><a title="UIApplication（待补充）" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIApplication%EF%BC%88%E5%BE%85%E8%A1%A5%E5%85%85%EF%BC%89.html">UIApplication（待补充）</a></li>
+                        
+                          <li><a title="UIKit.h 剩余总览" href="15217699956252.html">UIKit.h 剩余总览</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>UIKit.h 剩余总览</h1>
+
+<h3 id="toc_0">part 1</h3>
+
+<pre><code>#import &lt;UIKit/UIKitDefines.h&gt;
+
+#import &lt;UIKit/UIAccessibilityConstants.h&gt;
+#import &lt;UIKit/UIBezierPath.h&gt;
+#import &lt;UIKit/UIColor.h&gt;
+#import &lt;UIKit/UIFont.h&gt;
+#import &lt;UIKit/UIFontDescriptor.h&gt;
+#import &lt;UIKit/UIFontMetrics.h&gt;
+#import &lt;UIKit/UIGeometry.h&gt;
+#import &lt;UIKit/UIGraphics.h&gt;
+#import &lt;UIKit/UIImage.h&gt;
+#import &lt;UIKit/UILocalNotification.h&gt;
+#import &lt;UIKit/NSAttributedString.h&gt;
+#import &lt;UIKit/NSParagraphStyle.h&gt;
+#import &lt;UIKit/NSStringDrawing.h&gt;
+#import &lt;UIKit/NSText.h&gt;
+</code></pre>
+
+<h3 id="toc_1">part 2</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/UIAccelerometer.h&gt;)
+#import &lt;UIKit/UIAccelerometer.h&gt;
+#import &lt;UIKit/UIAccessibility.h&gt;
+#endif
+</code></pre>
+
+<h3 id="toc_2">part 3</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/UIAccessibilityContentSizeCategoryImageAdjusting.h&gt;)
+#import &lt;UIKit/UIAccessibilityContentSizeCategoryImageAdjusting.h&gt;
+#endif
+</code></pre>
+
+<h3 id="toc_3">part 4</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/UIActivityIndicatorView.h&gt;)
+#import &lt;UIKit/UIActivityIndicatorView.h&gt;
+#import &lt;UIKit/UIActivity.h&gt;
+#import &lt;UIKit/UIActivityItemProvider.h&gt;
+#import &lt;UIKit/UIActivityViewController.h&gt;
+#import &lt;UIKit/UIActionSheet.h&gt;
+#import &lt;UIKit/UIAlertController.h&gt;
+#import &lt;UIKit/UIAlertView.h&gt;
+#import &lt;UIKit/UIAppearance.h&gt;
+#import &lt;UIKit/UIBarButtonItemGroup.h&gt;
+#endif
+</code></pre>
+
+<h3 id="toc_4">part 5</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/UIButton.h&gt;)
+#import &lt;UIKit/UIButton.h&gt;
+#import &lt;UIKit/UICollectionView.h&gt;
+#import &lt;UIKit/UICollectionViewCell.h&gt;
+#import &lt;UIKit/UICollectionViewController.h&gt;
+#import &lt;UIKit/UICollectionViewFlowLayout.h&gt;
+#import &lt;UIKit/UICollectionViewLayout.h&gt;
+#import &lt;UIKit/UICollectionViewTransitionLayout.h&gt;
+#endif
+</code></pre>
+
+<h3 id="toc_5">part 6</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/UIContentSizeCategoryAdjusting.h&gt;)
+#import &lt;UIKit/UIContentSizeCategoryAdjusting.h&gt;
+#import &lt;UIKit/UIContentSizeCategory.h&gt;
+#import &lt;UIKit/UIControl.h&gt;
+#import &lt;UIKit/UIDataDetectors.h&gt;
+#import &lt;UIKit/UIDatePicker.h&gt;
+#import &lt;UIKit/UIDevice.h&gt;
+#import &lt;UIKit/UIDocument.h&gt;
+#import &lt;UIKit/UIDocumentInteractionController.h&gt;
+#import &lt;UIKit/UIDocumentPickerViewController.h&gt;
+#import &lt;UIKit/UIDocumentMenuViewController.h&gt;
+#import &lt;UIKit/UIDocumentPickerExtensionViewController.h&gt;
+#import &lt;UIKit/UICloudSharingController.h&gt;
+#import &lt;UIKit/NSFileProviderExtension.h&gt;
+#import &lt;UIKit/UIVisualEffect.h&gt;
+#import &lt;UIKit/UIBlurEffect.h&gt;
+#import &lt;UIKit/UIVibrancyEffect.h&gt;
+#import &lt;UIKit/UIVisualEffectView.h&gt;
+#import &lt;UIKit/UIEvent.h&gt;
+#endif
+</code></pre>
+
+<h3 id="toc_6">part 7</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/UIGestureRecognizer.h&gt;)
+#import &lt;UIKit/UIGestureRecognizer.h&gt;
+#endif
+</code></pre>
+
+<h3 id="toc_7">part 8</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/UIGraphicsRenderer.h&gt;)
+#import &lt;UIKit/UIGraphicsRenderer.h&gt;
+#import &lt;UIKit/UIGraphicsImageRenderer.h&gt;
+#import &lt;UIKit/UIGraphicsPDFRenderer.h&gt;
+#endif
+</code></pre>
+
+<h3 id="toc_8">part 9</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/UIImageAsset.h&gt;)
+#import &lt;UIKit/UIImageAsset.h&gt;
+#import &lt;UIKit/NSDataAsset.h&gt;
+#import &lt;UIKit/UIImagePickerController.h&gt;
+#import &lt;UIKit/UIImageView.h&gt;
+#import &lt;UIKit/UIInputView.h&gt;
+#import &lt;UIKit/UIInputViewController.h&gt;
+#import &lt;UIKit/UILabel.h&gt;
+#import &lt;UIKit/UILexicon.h&gt;
+#endif
+
+</code></pre>
+
+<h3 id="toc_9">part 10</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/UIUserNotificationSettings.h&gt;)
+
+#import &lt;UIKit/UIApplicationShortcutItem.h&gt;
+#import &lt;UIKit/UIUserNotificationSettings.h&gt;
+#import &lt;UIKit/UIFocus.h&gt;
+#import &lt;UIKit/UIFocusSystem.h&gt;
+#import &lt;UIKit/UIFocusGuide.h&gt;
+#import &lt;UIKit/UIFocusAnimationCoordinator.h&gt;
+#import &lt;UIKit/UIFocusDebugger.h&gt;
+#import &lt;UIKit/UILocalizedIndexedCollation.h&gt;
+#import &lt;UIKit/UILongPressGestureRecognizer.h&gt;
+#import &lt;UIKit/UIManagedDocument.h&gt;
+#import &lt;UIKit/UIMenuController.h&gt;
+#import &lt;UIKit/UIMotionEffect.h&gt;
+#import &lt;UIKit/UINib.h&gt;
+#import &lt;UIKit/UINibDeclarations.h&gt;
+#import &lt;UIKit/UINibLoading.h&gt;
+#import &lt;UIKit/UIPageControl.h&gt;
+#import &lt;UIKit/UIPageViewController.h&gt;
+#import &lt;UIKit/UIPanGestureRecognizer.h&gt;
+#import &lt;UIKit/UIPasteboard.h&gt;
+#import &lt;UIKit/UIPasteConfiguration.h&gt;
+#import &lt;UIKit/UIPasteConfigurationSupporting.h&gt;
+#import &lt;UIKit/UIPickerView.h&gt;
+#import &lt;UIKit/UIPinchGestureRecognizer.h&gt;
+#import &lt;UIKit/UIPopoverController.h&gt;
+#import &lt;UIKit/UIPopoverBackgroundView.h&gt;
+#import &lt;UIKit/UIPress.h&gt;
+#import &lt;UIKit/UIPressesEvent.h&gt;
+#import &lt;UIKit/UIPrinter.h&gt;
+#import &lt;UIKit/UIPrinterPickerController.h&gt;
+#import &lt;UIKit/UIPrintError.h&gt;
+#import &lt;UIKit/UIPrintFormatter.h&gt;
+#import &lt;UIKit/UIPrintInfo.h&gt;
+#import &lt;UIKit/UIPrintInteractionController.h&gt;
+#import &lt;UIKit/UIPrintPageRenderer.h&gt;
+#import &lt;UIKit/UIPrintPaper.h&gt;
+#import &lt;UIKit/UIProgressView.h&gt;
+#import &lt;UIKit/UIReferenceLibraryViewController.h&gt;
+#import &lt;UIKit/UIRefreshControl.h&gt;
+#import &lt;UIKit/UIResponder.h&gt;
+#import &lt;UIKit/UIRotationGestureRecognizer.h&gt;
+#import &lt;UIKit/UIScreen.h&gt;
+#import &lt;UIKit/UIScreenEdgePanGestureRecognizer.h&gt;
+#import &lt;UIKit/UIScreenMode.h&gt;
+#import &lt;UIKit/UIScrollView.h&gt;
+#import &lt;UIKit/UISearchBar.h&gt;
+#import &lt;UIKit/UISearchContainerViewController.h&gt;
+#import &lt;UIKit/UISearchController.h&gt;
+#import &lt;UIKit/UISearchDisplayController.h&gt;
+#import &lt;UIKit/UISegmentedControl.h&gt;
+#import &lt;UIKit/UISlider.h&gt;
+#import &lt;UIKit/UISplitViewController.h&gt;
+#import &lt;UIKit/UIStepper.h&gt;
+#import &lt;UIKit/UIStoryboard.h&gt;
+#import &lt;UIKit/UIStoryboardPopoverSegue.h&gt;
+#import &lt;UIKit/UIStoryboardSegue.h&gt;
+#import &lt;UIKit/UIStringDrawing.h&gt;
+#import &lt;UIKit/UISwipeGestureRecognizer.h&gt;
+#import &lt;UIKit/UISwitch.h&gt;
+#import &lt;UIKit/UITableView.h&gt;
+#import &lt;UIKit/UITableViewHeaderFooterView.h&gt;
+#import &lt;UIKit/UITableViewCell.h&gt;
+#import &lt;UIKit/UITableViewController.h&gt;
+#import &lt;UIKit/UITapGestureRecognizer.h&gt;
+#import &lt;UIKit/UITextChecker.h&gt;
+#import &lt;UIKit/UITextField.h&gt;
+#import &lt;UIKit/UITextInput.h&gt;
+#import &lt;UIKit/UITextInputTraits.h&gt;
+#import &lt;UIKit/UITextView.h&gt;
+#import &lt;UIKit/UITouch.h&gt;
+#import &lt;UIKit/UITraitCollection.h&gt;
+#import &lt;UIKit/UIVideoEditorController.h&gt;
+#import &lt;UIKit/UIView.h&gt;
+#import &lt;UIKit/UIViewController.h&gt;
+#import &lt;UIKit/UIWebView.h&gt;
+
+#import &lt;UIKit/UIDragInteraction.h&gt;
+#import &lt;UIKit/UIDragItem.h&gt;
+#import &lt;UIKit/UIDragPreview.h&gt;
+#import &lt;UIKit/UIDragPreviewParameters.h&gt;
+#import &lt;UIKit/UIDragSession.h&gt;
+#import &lt;UIKit/UIDropInteraction.h&gt;
+#import &lt;UIKit/UIInteraction.h&gt;
+#import &lt;UIKit/UITargetedDragPreview.h&gt;
+#import &lt;UIKit/UISpringLoadedInteraction.h&gt;
+#import &lt;UIKit/UISpringLoadedInteractionSupporting.h&gt;
+
+#endif
+</code></pre>
+
+<h3 id="toc_10">part 11</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/NSItemProvider+UIKitAdditions.h&gt;)
+#import &lt;UIKit/NSItemProvider+UIKitAdditions.h&gt;
+#endif
+</code></pre>
+
+<h3 id="toc_11">part 12</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/NSLayoutConstraint.h&gt;)
+#import &lt;UIKit/NSLayoutConstraint.h&gt;
+#import &lt;UIKit/NSLayoutAnchor.h&gt;
+#import &lt;UIKit/UILayoutGuide.h&gt;
+#import &lt;UIKit/UIStackView.h&gt;
+#import &lt;UIKit/NSLayoutManager.h&gt;
+#endif
+</code></pre>
+
+<h3 id="toc_12">part 13</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/NSShadow.h&gt;)
+#import &lt;UIKit/NSShadow.h&gt;
+#endif
+
+</code></pre>
+
+<h3 id="toc_13">part 14</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/NSTextAttachment.h&gt;)
+#import &lt;UIKit/NSTextAttachment.h&gt;
+#import &lt;UIKit/NSTextContainer.h&gt;
+#import &lt;UIKit/NSTextStorage.h&gt;
+#import &lt;UIKit/UIStateRestoration.h&gt;
+#import &lt;UIKit/UIViewControllerTransitioning.h&gt;
+#import &lt;UIKit/UIViewControllerTransitionCoordinator.h&gt;
+#import &lt;UIKit/UIPresentationController.h&gt;
+#import &lt;UIKit/UIPreviewInteraction.h&gt;
+#import &lt;UIKit/UIPopoverPresentationController.h&gt;
+#import &lt;UIKit/UIDynamicAnimator.h&gt;
+#import &lt;UIKit/UIDynamicBehavior.h&gt;
+#import &lt;UIKit/UIPushBehavior.h&gt;
+#import &lt;UIKit/UISnapBehavior.h&gt;
+#import &lt;UIKit/UIDynamicItemBehavior.h&gt;
+#import &lt;UIKit/UIFieldBehavior.h&gt;
+#import &lt;UIKit/UIGravityBehavior.h&gt;
+#import &lt;UIKit/UIAttachmentBehavior.h&gt;
+#import &lt;UIKit/UICollisionBehavior.h&gt;
+#import &lt;UIKit/UIRegion.h&gt;
+#endif
+</code></pre>
+
+<h3 id="toc_14">part 15</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/UITextDragging.h&gt;)
+#import &lt;UIKit/UITextDragging.h&gt;
+#import &lt;UIKit/UITextDropping.h&gt;
+#import &lt;UIKit/UITextDropProposal.h&gt;
+#import &lt;UIKit/UITextDragPreviewRenderer.h&gt;
+#import &lt;UIKit/UITextDragURLPreviews.h&gt;
+#endif
+
+</code></pre>
+
+<h3 id="toc_15">part 16</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/UIViewPropertyAnimator.h&gt;)
+#import &lt;UIKit/UIViewPropertyAnimator.h&gt;
+#endif
+</code></pre>
+
+<h3 id="toc_16">part 17</h3>
+
+<pre><code>#if __has_include(&lt;UIKit/UIFeedbackGenerator.h&gt;)
+#import &lt;UIKit/UIFeedbackGenerator.h&gt;
+#import &lt;UIKit/UISelectionFeedbackGenerator.h&gt;
+#import &lt;UIKit/UIImpactFeedbackGenerator.h&gt;
+#import &lt;UIKit/UINotificationFeedbackGenerator.h&gt;
+#endif
+</code></pre>
+
+<h3 id="toc_17">part 18</h3>
+
+<pre><code>#if __has_include(&lt;DocumentManager/DocumentManager.h&gt;)
+#import &lt;DocumentManager/DocumentManager.h&gt;
+#endif
+</code></pre>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIApplication%EF%BC%88%E5%BE%85%E8%A1%A5%E5%85%85%EF%BC%89.html"  title="Previous Post: UIApplication（待补充）">&laquo; UIApplication（待补充）</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15217699956252.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>
