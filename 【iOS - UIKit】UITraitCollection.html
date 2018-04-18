@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  UIWindow 窗口 - 【iOS - UIKit】居然是村长
+  UITraitCollection - 【iOS - UIKit】居然是村长
   
   </title>
  <meta name="description" content="">
@@ -71,6 +71,8 @@
         <li><label>T</label></li>
 
           
+            <li><a title="UITraitCollection" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITraitCollection.html">UITraitCollection</a></li>
+          
             <li><a title="UIToolbar" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIToolbar.html">UIToolbar</a></li>
           
             <li><a title="UITabBarItem" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBarItem.html">UITabBarItem</a></li>
@@ -85,7 +87,7 @@
         <li><label>W</label></li>
 
           
-            <li><a title="UIWindow 窗口" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIWindow%20%E7%AA%97%E5%8F%A3.html">UIWindow 窗口</a></li>
+            <li><a title="UIWindow 窗口" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIWindow.html">UIWindow 窗口</a></li>
           
 
       
@@ -140,6 +142,8 @@
                     
                       <li class="side-title"><span>T</span></li>
                         
+                          <li><a title="UITraitCollection" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITraitCollection.html">UITraitCollection</a></li>
+                        
                           <li><a title="UIToolbar" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIToolbar.html">UIToolbar</a></li>
                         
                           <li><a title="UITabBarItem" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UITabBarItem.html">UITabBarItem</a></li>
@@ -152,7 +156,7 @@
                     
                       <li class="side-title"><span>W</span></li>
                         
-                          <li><a title="UIWindow 窗口" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIWindow%20%E7%AA%97%E5%8F%A3.html">UIWindow 窗口</a></li>
+                          <li><a title="UIWindow 窗口" href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIWindow.html">UIWindow 窗口</a></li>
                         
 
                     
@@ -176,120 +180,138 @@
             <div class="large-9 medium-9 columns">
 
  <div class="markdown-body">
-<h1>UIWindow 窗口</h1>
+<h1>UITraitCollection</h1>
 
 <blockquote>
-<p>UIWindow : UIView<br/>
-Screen - Window - ViewController<br/>
-一般 APP 一个 window，也可以手动添加多个，常见的 HUD 就是 window 方式；</p>
+<p>UITraitCollection: NSObject<br/>
+适配相关</p>
 </blockquote>
 
-<h3 id="toc_0">基本</h3>
+<h3 id="toc_0">初始化</h3>
 
 <ul>
-<li>创建window，并且绑定一个 VC，然后使 window 可见，这是最常见的了；</li>
+<li>用户界面</li>
 </ul>
 
-<pre><code>    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
-    ViewContoller *rootVC = [[ViewContoller alloc] init];
-    [self.window setRootViewController:rootVC];
-    
-    [self.window makeKeyAndVisible];
+<pre><code>    UITraitCollection *userInterface = [UITraitCollection traitCollectionWithUserInterfaceIdiom:UIUserInterfaceIdiomPhone];
+    /*
+    typedef NS_ENUM(NSInteger, UIUserInterfaceIdiom) {
+        UIUserInterfaceIdiomUnspecified = -1,
+        UIUserInterfaceIdiomPhone, // iPhone and iPod touch style UI
+        UIUserInterfaceIdiomPad, // iPad style UI
+        UIUserInterfaceIdiomTV, // Apple TV style UI
+        UIUserInterfaceIdiomCarPlay, // CarPlay style UI
+    };
+     */
+</code></pre>
+
+<ul>
+<li>屏幕倍率</li>
+</ul>
+
+<pre><code>    UITraitCollection *scale = [UITraitCollection traitCollectionWithDisplayScale:2];
+</code></pre>
+
+<ul>
+<li>sizeClass</li>
+</ul>
+
+<pre><code>    UITraitCollection *hSizeClass = [UITraitCollection traitCollectionWithHorizontalSizeClass:UIUserInterfaceSizeClassCompact];
+    UITraitCollection *vSizeClass = [UITraitCollection traitCollectionWithVerticalSizeClass:UIUserInterfaceSizeClassRegular];
+    /*
+     typedef NS_ENUM(NSInteger, UIUserInterfaceSizeClass) {
+     UIUserInterfaceSizeClassUnspecified = 0,
+     UIUserInterfaceSizeClassCompact     = 1,
+     UIUserInterfaceSizeClassRegular     = 2,
+     };
+     */
+</code></pre>
+
+<ul>
+<li>3D touch 能力</li>
+</ul>
+
+<pre><code>    UITraitCollection *force = [UITraitCollection traitCollectionWithForceTouchCapability:UIForceTouchCapabilityAvailable];
+    /*
+     typedef NS_ENUM(NSInteger, UIForceTouchCapability) {
+     UIForceTouchCapabilityUnknown = 0,
+     UIForceTouchCapabilityUnavailable = 1,
+     UIForceTouchCapabilityAvailable = 2
+     };
+     */
 </code></pre>
 
 <h3 id="toc_1">属性</h3>
 
-<pre><code>    self.window.screen;
-    self.window.isKeyWindow;
+<pre><code>    traitCollection.userInterfaceIdiom;
+    traitCollection.displayScale;
+    traitCollection.horizontalSizeClass;
+    traitCollection.verticalSizeClass;
+    traitCollection.forceTouchCapability;
 </code></pre>
 
-<h3 id="toc_2">多 window 切换</h3>
+<h3 id="toc_2">iOS 10</h3>
 
-<ul>
-<li>默认同级别的 window</li>
-</ul>
-
-<pre><code>    // window2 初始略，此处为注册 window，但是不显示
-    [self.window2 makeKeyWindow];
+<pre><code>    // 方向？功能不详
+    UITraitCollection *direction = [UITraitCollection traitCollectionWithLayoutDirection:UITraitEnvironmentLayoutDirectionLeftToRight];
+    /*
+     typedef NS_ENUM(NSInteger, UITraitEnvironmentLayoutDirection) {
+     UITraitEnvironmentLayoutDirectionUnspecified = -1,
+     UITraitEnvironmentLayoutDirectionLeftToRight = UIUserInterfaceLayoutDirectionLeftToRight,
+     UITraitEnvironmentLayoutDirectionRightToLeft = UIUserInterfaceLayoutDirectionRightToLeft,
+     } NS_ENUM_AVAILABLE_IOS(10_0);
+     */
     
-    // 2 个 window 相互切换
-    [[UIApplication sharedApplication].windows enumerateObjectsUsingBlock:^(__kindof UIWindow * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj != [UIApplication sharedApplication].keyWindow) {
-            [obj makeKeyAndVisible];
-            *stop = YES;
-        }
-    }];
-</code></pre>
-
-<ul>
-<li>不同级别的 window</li>
-</ul>
-
-<pre><code>self.window.windowLevel = UIWindowLevelNormal;
-
-UIKIT_EXTERN const UIWindowLevel UIWindowLevelNormal;// 0
-UIKIT_EXTERN const UIWindowLevel UIWindowLevelAlert;// 2000
-UIKIT_EXTERN const UIWindowLevel UIWindowLevelStatusBar;// 1000
-也可以自定义，级别越大，在 makeKeyAndVisible 后，处于上方（就是 z-index）
-</code></pre>
-
-<blockquote>
-<p>但是不知道这么去，注销释放 makeKeyAndVisible 的 window</p>
-</blockquote>
-
-<h3 id="toc_3">相对位置转换</h3>
-
-<pre><code>    // window2 中的 （100，50）相对于 window 中的 point位置；p1=（200，150）
-    CGPoint p1 = [self.window2 convertPoint:CGPointMake(100, 50) toWindow:self.window];
+    // 功能不详
+    UITraitCollection *preferred = [UITraitCollection traitCollectionWithPreferredContentSizeCategory:UIContentSizeCategoryLarge];
+    /*
+     很多常量可选，略
+     */
     
-    // window 中的 （100，50）相对于 window2 中的 point位置；p2=（0，-50）
-    CGPoint p2 = [self.window2 convertPoint:CGPointMake(100, 50) fromWindow:self.window];
+    // 色彩
+    UITraitCollection *gamut = [UITraitCollection traitCollectionWithDisplayGamut:UIDisplayGamutSRGB];
+    /*
+     typedef NS_ENUM(NSInteger, UIDisplayGamut) {
+     UIDisplayGamutUnspecified = -1, // UIKit will not set this anymore, instead a sensible default is chosen based on the device capabilities and settings always
+     UIDisplayGamutSRGB,
+     UIDisplayGamutP3
+     } NS_ENUM_AVAILABLE_IOS(10_0);
+     */
 </code></pre>
 
-<blockquote>
-<p>CGRect 类似；</p>
-</blockquote>
+<pre><code>    traitCollection.layoutDirection;
+    traitCollection.preferredContentSizeCategory;
+    traitCollection.displayGamut;
+</code></pre>
 
-<h3 id="toc_4">通知</h3>
+<h3 id="toc_3">方法</h3>
 
 <ul>
-<li>window 通知</li>
+<li>合并</li>
 </ul>
 
-<pre><code>UIKIT_EXTERN NSNotificationName const UIWindowDidBecomeVisibleNotification;
-UIKIT_EXTERN NSNotificationName const UIWindowDidBecomeHiddenNotification;
-UIKIT_EXTERN NSNotificationName const UIWindowDidBecomeKeyNotification;
-UIKIT_EXTERN NSNotificationName const UIWindowDidResignKeyNotification;
+<pre><code>    UITraitCollection *b = [UITraitCollection traitCollectionWithTraitsFromCollections:@[hSizeClass, vSizeClass]];
 </code></pre>
 
 <ul>
-<li>键盘通知</li>
+<li>检查包含</li>
 </ul>
 
-<pre><code>UIKIT_EXTERN NSNotificationName const UIKeyboardWillShowNotification;
-UIKIT_EXTERN NSNotificationName const UIKeyboardDidShowNotification;
-UIKIT_EXTERN NSNotificationName const UIKeyboardWillHideNotification;
-UIKIT_EXTERN NSNotificationName const UIKeyboardDidHideNotification;
-UIKIT_EXTERN NSNotificationName const UIKeyboardWillChangeFrameNotification;
-UIKIT_EXTERN NSNotificationName const UIKeyboardDidChangeFrameNotification;
-
-// userInfoKey
-UIKIT_EXTERN NSString *const UIKeyboardFrameBeginUserInfoKey; // NSValue of CGRect
-UIKIT_EXTERN NSString *const UIKeyboardFrameEndUserInfoKey; // NSValue of CGRect
-UIKIT_EXTERN NSString *const UIKeyboardAnimationDurationUserInfoKey; // NSNumber of double
-UIKIT_EXTERN NSString *const UIKeyboardAnimationCurveUserInfoKey; // NSNumber of NSUInteger (UIViewAnimationCurve)
-UIKIT_EXTERN NSString *const UIKeyboardIsLocalUserInfoKey; // NSNumber of BOOL
+<pre><code>    if ([self.traitCollection containsTraitsInCollection:verticaTrait]) {
+        
+    }
 </code></pre>
 
-<h3 id="toc_5">事件</h3>
+<h3 id="toc_4">协议</h3>
 
-<pre><code>    [self.window sendEvent:event];
+<p>直接可用，NSObject 都可用</p>
+
+<pre><code>- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    NSLog(@&quot;change&quot;);
+    NSLog(@&quot;原来的：%@&quot;, previousTraitCollection);
+    NSLog(@&quot;新的：%@&quot;, self.traitCollection)
+}
 </code></pre>
-
-<blockquote>
-<p>这个有待深入研究 event</p>
-</blockquote>
 
 
 </div>
@@ -306,8 +328,8 @@ UIKIT_EXTERN NSString *const UIKeyboardIsLocalUserInfoKey; // NSNumber of BOOL
   <div class="large-6 columns">
 	<div class="text-right" style="padding:15px 0px;">
 		
-	        <a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIBarMetrics%20%E4%B8%8E%20UIBarPosition.html" 
-	        title="Next Post: UIBarMetrics 与 UIBarPosition">UIBarMetrics 与 UIBarPosition &raquo;</a>
+	        <a href="%E3%80%90iOS%20-%20UIKit%E3%80%91UIWindow.html" 
+	        title="Next Post: UIWindow 窗口">UIWindow 窗口 &raquo;</a>
 	    
 	</div>
   </div>
@@ -320,7 +342,7 @@ UIKIT_EXTERN NSString *const UIKeyboardIsLocalUserInfoKey; // NSNumber of BOOL
 </div>
 <script type="text/javascript">
 	$(function(){
-		var currentURL = '%E3%80%90iOS%20-%20UIKit%E3%80%91UIWindow%20%E7%AA%97%E5%8F%A3.html';
+		var currentURL = '%E3%80%90iOS%20-%20UIKit%E3%80%91UITraitCollection.html';
 		$('#side-nav a').each(function(){
 			if($(this).attr('href') == currentURL){
 				$(this).parent().addClass('active');
